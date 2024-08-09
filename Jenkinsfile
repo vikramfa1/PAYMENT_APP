@@ -67,7 +67,7 @@ pipeline {
 
              steps {
 
-                sh """curl -X PUT -d '{"operationType":"SPRING","taskId":"K8S_DEPLOYMENT","jobId":"1","jobName":"PAYMENT_APP","taskStatus":"COMPLETED"}' -H "Content-Type:application/json" http://host.docker.internal:8084/v1/job/1/update"""
+                sh """curl -X PUT -d '{"operationType":"SPRING","taskId":"JENKINS_PIPELINE","jobId":"1","jobName":"PAYMENT_APP","taskStatus":"COMPLETED"}' -H "Content-Type:application/json" http://host.docker.internal:8084/v1/job/1/update"""
 
              }
           }
