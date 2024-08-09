@@ -12,13 +12,13 @@ pipeline {
     }
 
     stages {
-        stage('Compile') {
+        /*stage('Compile') {
             steps {
                 echo "1maven path: ${MAVEN_HOME}/bin/mvn clean compile"
                 // Compile the project using Maven
                 sh "${MAVEN_HOME}/bin/mvn clean compile"
             }
-        }
+        }*/
 
         stage('Test') {
             steps {
@@ -27,11 +27,11 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        /*stage('Build') {
             steps {
                 sh '${MAVEN_HOME}/bin/mvn -B -DskipTests clean package'
             }
-        }
+        }*/
 
         stage('Build Docker Image') {
                     steps {
