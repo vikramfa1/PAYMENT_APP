@@ -55,20 +55,29 @@ pipeline {
                     }
                 }
 
-                stage('Logout from GitHub Container Registry') {
-                    steps {
-                        script {
-                            sh 'docker logout ghcr.io'
-                        }
-                    }
+        stage('Logout from GitHub Container Registry') {
+            steps {
+                script {
+                    sh 'docker logout ghcr.io'
                 }
+            }
+        }
+
+        stage('publish completion status to rule engine') {
+
+             steps {
+
+                sh """curl -X PUT -d '{"operationType":"SPRING","taskId":"K8S_DEPLOYMENT","jobId":"1","jobName":"PAYMENT_APP","taskStatus":"COMPLETED"}' -H "Content-Type:application/json" http://localhost:8084/v1/job/1/update"""
+
+             }
+          }
     }
 
     post {
         // Actions to perform after the pipeline completes
         always {
             // Archive test results
-            junit '**/target/test-*.xml'
+            //junit '**/target/test-*.xml'
             // Clean up
             cleanWs()
         }
