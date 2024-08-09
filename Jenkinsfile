@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define any environment variables here if needed
-        MAVEN_HOME = tool name: 'Maven 3.8.1', type: 'maven'
+        MAVEN_HOME = tool name: 'Maven 3.9.6', type: 'maven'
         // Define environment variables
         GITHUB_USERNAME = 'vikramfa1'
         DOCKER_IMAGE = "ghcr.io/${GITHUB_USERNAME}/developer-utility-app"
