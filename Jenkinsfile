@@ -27,11 +27,11 @@ pipeline {
             }
         }
 
-        /*stage('Build') {
+        stage('Build') {
             steps {
                 sh '${MAVEN_HOME}/bin/mvn -B -DskipTests clean package'
             }
-        }*/
+        }
 
         stage('Build Docker Image') {
                     steps {
