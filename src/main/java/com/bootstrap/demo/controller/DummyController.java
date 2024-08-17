@@ -1,6 +1,5 @@
 package com.bootstrap.demo.controller;
 
-import com.java.lib.bootrsap.LibraryLogger;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
